@@ -12,9 +12,9 @@ public class PlayerController : MonoBehaviour
     public string etat = "haut";
     public float speed;
 
-    public Animator anim;
+    public bool inactif;
 
-    private GameObject gameOver;
+    public Animator anim;
 
     SpriteRenderer sp;
 
@@ -22,8 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         sp = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        //gameOver = GameObject.FindWithTag("Finish");
-        //gameOver.SetActive(false);
+        inactif = false;
     }
 
     void Update()
@@ -32,16 +31,16 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("PasBouger", true );
             anim.SetBool("Bouger", false );
-            Debug.Log("On arrête de bouger !");
+            inactif = true;
         }
 
         if(Input.GetKey(inputFront))
         {
-            Debug.Log("On Bouge !");
             anim.SetBool("Bouger", true );
             anim.SetBool("PasBouger", false );
             transform.Translate(-speed * Time.deltaTime, 0, 0);
             transform.SetPositionAndRotation(new Vector3(transform.position.x, transform.position.y), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, -90f)));
+            inactif = false;
         }
 
         if (Input.GetKey(inputBack))
@@ -50,6 +49,7 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("PasBouger", false);
             transform.Translate(-speed * Time.deltaTime, 0, 0);
             transform.SetPositionAndRotation(new Vector3(transform.position.x, transform.position.y), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 90f)));
+            inactif = false;
         }
 
         if (Input.GetKey(inputLeft))
@@ -58,6 +58,7 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("PasBouger", false);
             transform.Translate(-speed * Time.deltaTime, 0, 0);
             transform.SetPositionAndRotation(new Vector3(transform.position.x, transform.position.y), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 0f)));
+            inactif = false;
         }
 
         if (Input.GetKey(inputRight))
@@ -66,15 +67,8 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("PasBouger", false);
             transform.Translate(-speed * Time.deltaTime, 0, 0);
             transform.SetPositionAndRotation(new Vector3(transform.position.x, transform.position.y), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 180f)));
+            inactif = false;
         }
 
-        /*if (gameOver == null)
-        {
-            Debug.Log("L'objet game over n'a pas été trouvé");
-        }
-        else
-        {
-            gameOver.SetActive(true);
-        }*/
     }
 }
