@@ -12,15 +12,9 @@ public class ObstacleStaticMortel : MonoBehaviour
         go.SetActive(false);
     }
 
-    
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("On rentre en collision et on provoque game over");
+        //Debug.Log("On rentre en collision et on provoque game over");
         go.SetActive(true);
         Time.timeScale = 0f;
     }

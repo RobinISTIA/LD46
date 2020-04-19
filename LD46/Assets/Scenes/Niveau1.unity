@@ -368,7 +368,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &905253953
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -512,16 +512,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 61702183432251614, guid: 6cef49d772c5196479d463ea29f918d1,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.70136154
-      objectReference: {fileID: 0}
-    - target: {fileID: 61702183432251614, guid: 6cef49d772c5196479d463ea29f918d1,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 7.7825565
-      objectReference: {fileID: 0}
     - target: {fileID: 3811315850472467073, guid: 6cef49d772c5196479d463ea29f918d1,
         type: 3}
       propertyPath: m_Name
@@ -581,31 +571,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5773838545053475735, guid: 6cef49d772c5196479d463ea29f918d1,
-        type: 3}
-      propertyPath: inputFront
-      value: z
-      objectReference: {fileID: 0}
-    - target: {fileID: 5773838545053475735, guid: 6cef49d772c5196479d463ea29f918d1,
-        type: 3}
-      propertyPath: inputBack
-      value: s
-      objectReference: {fileID: 0}
-    - target: {fileID: 5773838545053475735, guid: 6cef49d772c5196479d463ea29f918d1,
-        type: 3}
-      propertyPath: inputLeft
-      value: q
-      objectReference: {fileID: 0}
-    - target: {fileID: 5773838545053475735, guid: 6cef49d772c5196479d463ea29f918d1,
-        type: 3}
-      propertyPath: inputRight
-      value: d
-      objectReference: {fileID: 0}
-    - target: {fileID: 5773838545053475735, guid: 6cef49d772c5196479d463ea29f918d1,
-        type: 3}
-      propertyPath: speed
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cef49d772c5196479d463ea29f918d1, type: 3}

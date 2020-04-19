@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public string etat = "haut";
     public float speed;
 
-    public Quaternion q = new Quaternion(0, 0, 0, 0);
+    public Animator anim;
 
     private GameObject gameOver;
 
@@ -21,35 +21,49 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         sp = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
         //gameOver = GameObject.FindWithTag("Finish");
         //gameOver.SetActive(false);
     }
 
     void Update()
     {
-        sp.flipY = true;
+        if( !Input.GetKey(inputFront) && !Input.GetKey(inputBack) && !Input.GetKey(inputLeft) && !Input.GetKey(inputRight))
+        {
+            anim.SetBool("PasBouger", true );
+            anim.SetBool("Bouger", false );
+            Debug.Log("On arrête de bouger !");
+        }
+
         if(Input.GetKey(inputFront))
         {
-            sp.flipY = !sp.flipY;
+            Debug.Log("On Bouge !");
+            anim.SetBool("Bouger", true );
+            anim.SetBool("PasBouger", false );
             transform.Translate(-speed * Time.deltaTime, 0, 0);
             transform.SetPositionAndRotation(new Vector3(transform.position.x, transform.position.y), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, -90f)));
-
         }
 
         if (Input.GetKey(inputBack))
         {
+            anim.SetBool("Bouger", true);
+            anim.SetBool("PasBouger", false);
             transform.Translate(-speed * Time.deltaTime, 0, 0);
             transform.SetPositionAndRotation(new Vector3(transform.position.x, transform.position.y), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 90f)));
         }
 
         if (Input.GetKey(inputLeft))
         {
+            anim.SetBool("Bouger", true);
+            anim.SetBool("PasBouger", false);
             transform.Translate(-speed * Time.deltaTime, 0, 0);
             transform.SetPositionAndRotation(new Vector3(transform.position.x, transform.position.y), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 0f)));
         }
 
         if (Input.GetKey(inputRight))
         {
+            anim.SetBool("Bouger", true);
+            anim.SetBool("PasBouger", false);
             transform.Translate(-speed * Time.deltaTime, 0, 0);
             transform.SetPositionAndRotation(new Vector3(transform.position.x, transform.position.y), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 180f)));
         }
