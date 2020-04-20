@@ -8,8 +8,9 @@ public class ChronoInactif : MonoBehaviour
     public bool IsInactif;
     public float tmpRestant;
 
-    GameObject go;
+    //GameObject go;
     GameObject player;
+    GameObject camera;
 
     private Text txt;
     private float tmp = 0.0f;
@@ -18,8 +19,13 @@ public class ChronoInactif : MonoBehaviour
     {
         tmpRestant = 5;
         txt = GetComponent<Text>();
-        go = GameObject.FindWithTag("Finish");
+        //go = GameObject.FindWithTag("Finish");
+        camera = GameObject.FindWithTag("MainCamera");
         player = GameObject.FindWithTag("Player");
+        if(camera == null)
+        {
+            Debug.Log("Objet Camera non trouvé dans Chrono inactif !");
+        }
     }
 
     void Update()
@@ -42,7 +48,8 @@ public class ChronoInactif : MonoBehaviour
 
             if(tmpRestant <= 0)
             {
-                go.SetActive(true);
+                camera.GetComponent<GameOver>().gameOver = true;
+                //go.SetActive(true);
                 tmpRestant = 0;
             }
         }

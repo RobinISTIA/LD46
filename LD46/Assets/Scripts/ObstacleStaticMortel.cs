@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class ObstacleStaticMortel : MonoBehaviour
 {
-    private GameObject go;
+    private GameObject camera;
 
     void Start()
     {
-        go = GameObject.FindWithTag("Finish");
-        go.SetActive(false);
+        camera = GameObject.FindWithTag("MainCamera");
+        if(camera == null)
+        {
+            Debug.Log("Camera non trouvé dans ObstacleStatic !");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log("On rentre en collision et on provoque game over");
-        go.SetActive(true);
-        Time.timeScale = 0f;
+        if(collision.gameObject.tag == "Player")
+        {
+            camera.GetComponent<GameOver>().gameOver = true;
+        }
     }
 }

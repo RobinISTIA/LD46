@@ -17,7 +17,7 @@ public class ChronoVictory : MonoBehaviour
         //tmpRestant = 60;
         vict = GameObject.FindWithTag("Victory");
         vict.SetActive(false);
-        Debug.Log("on mets victoire a false");
+        //Debug.Log("on mets victoire a false");
         txt = GetComponent<Text>();
     }
 
