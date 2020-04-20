@@ -17,7 +17,7 @@ public class ChronoInactif : MonoBehaviour
 
     void Start()
     {
-        tmpRestant = 5;
+        tmpRestant = 3;
         txt = GetComponent<Text>();
         //go = GameObject.FindWithTag("Finish");
         camera = GameObject.FindWithTag("MainCamera");
@@ -32,7 +32,7 @@ public class ChronoInactif : MonoBehaviour
     {
         if (!player.GetComponent<PlayerController>().inactif)
         {
-            tmpRestant = 5f;
+            tmpRestant = 3f;
             txt.text = tmpRestant.ToString();
         }
         else

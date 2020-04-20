@@ -43,7 +43,6 @@ public class VirusScript : MonoBehaviour
     {
         if (!accroche)
         {
-            Debug.Log("On cherche le joueur !");
             //On recherche le joueur
             tmp += Time.deltaTime;
             if (tmp >= interval)

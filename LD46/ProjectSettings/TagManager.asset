@@ -6,6 +6,9 @@ TagManager:
   tags:
   - GameOver
   - Victory
+  - Vir1
+  - Boule1
+  - Boule2
   layers:
   - Default
   - TransparentFX
