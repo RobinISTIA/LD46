@@ -20,20 +20,17 @@ public class ChronoInactif : MonoBehaviour
         txt = GetComponent<Text>();
         go = GameObject.FindWithTag("Finish");
         player = GameObject.FindWithTag("Player");
-        //player.GetComponent<PlayerController>().inactif;
     }
 
     void Update()
     {
         if (!player.GetComponent<PlayerController>().inactif)
         {
-            Debug.Log("Actif !");
             tmpRestant = 5f;
             txt.text = tmpRestant.ToString();
         }
         else
         {
-            Debug.Log("inactif !");
             tmp += Time.deltaTime;
             if( tmp >= 1f)
             {
@@ -46,6 +43,7 @@ public class ChronoInactif : MonoBehaviour
             if(tmpRestant <= 0)
             {
                 go.SetActive(true);
+                tmpRestant = 0;
             }
         }
     }
