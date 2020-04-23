@@ -11,17 +11,11 @@ public class Niveau2Script : MonoBehaviour
     private Text txt;
     private float tmp = 0.0f;
 
-    GameObject vict;
     GameObject boule1;
     GameObject vir1;
 
     void Start()
     {
-        vict = GameObject.FindWithTag("Victory");
-        if(vict == null)
-        {
-            Debug.Log("victoire non trouvé !");
-        }
         boule1 = GameObject.FindWithTag("Boule1");
         if (boule1 == null)
         {
@@ -34,7 +28,6 @@ public class Niveau2Script : MonoBehaviour
         }
         boule1.SetActive(false);
         vir1.SetActive(false);
-        vict.SetActive(false);
         txt = GetComponent<Text>();
     }
 
@@ -49,8 +42,8 @@ public class Niveau2Script : MonoBehaviour
 
         if (tmpRestant <= 0)
         {
-            vict.SetActive(true);
-            Time.timeScale = 0f;
+            SceneManager.LoadScene("Transition2");
+            //Time.timeScale = 0f;
             tmpRestant = 0;
         }
 
@@ -71,13 +64,6 @@ public class Niveau2Script : MonoBehaviour
 
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
 
-            if (hit.collider != null)
-            {
-                if (hit.collider.gameObject.name == vict.gameObject.name)
-                {
-                    SceneManager.LoadScene("Niveau3");
-                }
-            }
         }
     }
 }

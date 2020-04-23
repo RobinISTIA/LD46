@@ -6,18 +6,54 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Pres1.unity
+    guid: 9c2fb35b7dce806488c4454f7cd986c6
+  - enabled: 1
+    path: Assets/Scenes/Pres2.unity
+    guid: 997582b785475f346b50fb1907494e20
+  - enabled: 1
+    path: Assets/Scenes/Pres3.unity
+    guid: fe62d6b18bf58844a9dc43b4b9f5c83c
+  - enabled: 1
+    path: Assets/Scenes/Tuto0.unity
+    guid: bd726fb2d995d304883f6f775bf32af7
+  - enabled: 1
+    path: Assets/Scenes/Tuto2.unity
+    guid: ba90bb868d5977c4dadf14c3f6c1fdfe
+  - enabled: 1
     path: Assets/Scenes/Niveau1.unity
     guid: 57c87c8521e8e5d4baf4f4af3df0a56d
+  - enabled: 1
+    path: Assets/Scenes/Transition1.unity
+    guid: 32b7fcadea877ab4a947c644e13fa470
+  - enabled: 1
+    path: Assets/Scenes/Tuto1.unity
+    guid: 2fd315090cf917948837250c6bc01bda
   - enabled: 1
     path: Assets/Scenes/Niveau2.unity
     guid: 83a0120ff69c9da488944daf3a2c47cb
   - enabled: 1
+    path: Assets/Scenes/Transition2.unity
+    guid: 3b6c3d1a4fcbdfa478661e756fe6a960
+  - enabled: 1
     path: Assets/Scenes/Niveau3.unity
     guid: d11b215c0bc22694981860a2dfc6dc26
+  - enabled: 1
+    path: Assets/Scenes/Transition3.unity
+    guid: 44d80254e69ee7446abbcf5034c0fef5
   - enabled: 1
     path: Assets/Scenes/Niveau4.unity
     guid: f449a3024b7ac0d43951c9ee8941a3e3
   - enabled: 1
+    path: Assets/Scenes/Transition4.unity
+    guid: 8c1d47f430ae4454abd50ea0c6babc6f
+  - enabled: 1
     path: Assets/Scenes/Niveau5.unity
     guid: 5f4e6621439cc594986101cbf3a26e72
+  - enabled: 1
+    path: Assets/Scenes/Final.unity
+    guid: ed306ca1ff0dbe542bf8bd0a6d8bd8cd
+  - enabled: 1
+    path: Assets/Scenes/Thanks.unity
+    guid: 472ea3c0c3f42f7459fbf7dd6e285aba
   m_configObjects: {}

@@ -9,6 +9,19 @@ TagManager:
   - Vir1
   - Boule1
   - Boule2
+  - Tuto1
+  - Tuto2
+  - Tuto3
+  - Boule3
+  - Boule4
+  - Vir2
+  - Boule5
+  - Boule6
+  - Boule7
+  - Boule8
+  - Boule9
+  - Vir3
+  - Vir4
   layers:
   - Default
   - TransparentFX

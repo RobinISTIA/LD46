@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Niveau3Script : MonoBehaviour
+public class Niveau4Script : MonoBehaviour
 {
     public float tmpRestant;
 
@@ -14,7 +14,10 @@ public class Niveau3Script : MonoBehaviour
 
     GameObject boule1;
     GameObject boule2;
+    GameObject boule3;
+    GameObject boule4;
     GameObject vir1;
+    GameObject vir2;
 
     void Start()
     {
@@ -24,7 +27,17 @@ public class Niveau3Script : MonoBehaviour
             Debug.Log("BDF1 non trouvé !");
         }
         boule2 = GameObject.FindWithTag("Boule2");
-        if(boule2 == null)
+        if (boule2 == null)
+        {
+            Debug.Log("Boule 2 non trouvé");
+        }
+        boule3 = GameObject.FindWithTag("Boule3");
+        if (boule3 == null)
+        {
+            Debug.Log("BDF1 non trouvé !");
+        }
+        boule4 = GameObject.FindWithTag("Boule4");
+        if (boule4 == null)
         {
             Debug.Log("Boule 2 non trouvé");
         }
@@ -33,9 +46,18 @@ public class Niveau3Script : MonoBehaviour
         {
             Debug.Log("virus non trouvé !");
         }
+        vir2 = GameObject.FindWithTag("Vir2");
+        if (vir2 == null)
+        {
+            Debug.Log("virus non trouvé !");
+        }
         boule1.SetActive(false);
         boule2.SetActive(false);
+        boule3.SetActive(false);
+        boule4.SetActive(false);
+
         vir1.SetActive(false);
+        vir2.SetActive(false);
         txt = GetComponent<Text>();
     }
 
@@ -50,23 +72,34 @@ public class Niveau3Script : MonoBehaviour
 
         if (tmpRestant <= 0)
         {
-            SceneManager.LoadScene("Transition3");
+            SceneManager.LoadScene("Transition4");
             tmpRestant = 0;
         }
 
-        if (tmpRestant == 17)
+        if (tmpRestant == 21)
         {
             boule1.SetActive(true);
         }
 
-        if (tmpRestant == 10)
+        if (tmpRestant == 19)
+        {
+            vir1.SetActive(true);
+        }
+
+        if (tmpRestant == 14)
+        {
+            vir2.SetActive(true);
+        }
+
+        if (tmpRestant == 12)
         {
             boule2.SetActive(true);
         }
 
-        if (tmpRestant == 20)
+        if( tmpRestant == 8)
         {
-            vir1.SetActive(true);
+            boule3.SetActive(true);
+            boule4.SetActive(true);
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -77,5 +110,6 @@ public class Niveau3Script : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
 
         }
+
     }
 }

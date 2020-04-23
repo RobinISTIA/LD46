@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public string inputFront;
+    /*public string inputFront;
     public string inputBack;
     public string inputLeft;
-    public string inputRight;
+    public string inputRight;*/
 
     public string etat = "haut";
     public float speed;
@@ -23,18 +23,20 @@ public class PlayerController : MonoBehaviour
         sp = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         inactif = false;
+        
+
     }
 
     void Update()
     {
-        if( !Input.GetKey(inputFront) && !Input.GetKey(inputBack) && !Input.GetKey(inputLeft) && !Input.GetKey(inputRight))
+        if( !Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
         {
             anim.SetBool("PasBouger", true );
             anim.SetBool("Bouger", false );
             inactif = true;
         }
 
-        if(Input.GetKey(inputFront))
+        if(Input.GetKey(KeyCode.UpArrow))
         {
             anim.SetBool("Bouger", true );
             anim.SetBool("PasBouger", false );
@@ -43,7 +45,7 @@ public class PlayerController : MonoBehaviour
             inactif = false;
         }
 
-        if (Input.GetKey(inputBack))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             anim.SetBool("Bouger", true);
             anim.SetBool("PasBouger", false);
@@ -52,7 +54,7 @@ public class PlayerController : MonoBehaviour
             inactif = false;
         }
 
-        if (Input.GetKey(inputLeft))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             anim.SetBool("Bouger", true);
             anim.SetBool("PasBouger", false);
@@ -61,7 +63,7 @@ public class PlayerController : MonoBehaviour
             inactif = false;
         }
 
-        if (Input.GetKey(inputRight))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             anim.SetBool("Bouger", true);
             anim.SetBool("PasBouger", false);
